@@ -1,5 +1,5 @@
-## Hi there 👋
-
+## Olá! 👋
+HNNEWGAMESv2 é o repositório oficial das traduções de jogos feitas e participadas pelo HNNEWGAMES. Explore nossa coleção exclusiva para consoles clássicos e modernos, incluindo PS1, PS2, PS3, PSP, GameCube, Wii, GBA, Xbox e Xbox 360. Mergulhe em cada projeto, totalmente em Português do Brasil, fruto de dedicação e expertise.
 <!--
 **hnnewgames/hnnewgames** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
