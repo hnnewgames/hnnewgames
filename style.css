@@ -1,0 +1,333 @@
+/* --- CSS PERSONALIZADO HNNEWGAMES --- */
+
+/* 1. Cores e Fundo */
+:root {
+    --color-background-primary: #000000; /* Preto puro */
+    --color-background-secondary: #1a1a1a; /* Cinza muito escuro */
+    --color-text-primary: #e0e0e0; /* Cinza claro */
+    --color-accent-green: #00ff00; /* Verde Matrix */
+    --color-accent-green-dark: #00cc00; /* Verde Matrix mais escuro */
+    --color-border-subtle: #003366; /* Azul escuro sutil */
+}
+
+body {
+    background-color: var(--color-background-primary);
+    color: var(--color-text-primary);
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    scroll-behavior: smooth; /* Rolagem suave para âncoras */
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Scrollbar para navegadores Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--color-background-secondary); /* Fundo da barra de rolagem */
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-accent-green); /* Cor da alça da barra de rolagem */
+  border-radius: 5px;
+  border: 2px solid var(--color-background-secondary);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-accent-green-dark); /* Cor da alça no hover */
+}
+::-webkit-scrollbar-track {
+  background-color: var(--color-background-primary); /* Fundo da trilha */
+}
+
+
+/* 2. Links */
+a {
+    color: var(--color-accent-green);
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-accent-green-dark);
+    text-decoration: underline;
+}
+
+/* 3. Títulos (h1, h2, h3, etc.) */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fira Code', 'Ubuntu Mono', Consolas, monospace;
+    color: var(--color-accent-green);
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5); /* Efeito de brilho sutil */
+    margin-bottom: 0.5em;
+}
+
+.site-title {
+    font-size: 2.5em;
+    text-align: center;
+    margin: 20px 0;
+    padding-top: 20px;
+}
+
+.section-title {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 40px;
+    padding-top: 20px;
+}
+
+/* 4. Cabeçalho do Site */
+.site-header {
+    background-color: var(--color-background-primary);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--color-border-subtle);
+    box-shadow: 0 2px 10px rgba(0, 255, 0, 0.1); /* Sutil brilho inferior */
+}
+
+.site-header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas menores */
+    justify-content: center;
+}
+
+.main-nav li {
+    margin: 0 15px;
+}
+
+.main-nav a {
+    display: block;
+    padding: 10px 0;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--color-accent-green);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--color-accent-green-dark);
+    text-decoration: none;
+    transform: translateY(-2px); /* Efeito de leve elevação no hover */
+}
+
+/* 5. Seções de Conteúdo */
+main {
+    padding: 40px 0;
+}
+
+.hero-section {
+    background-color: var(--color-background-secondary);
+    padding: 60px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 1px dashed var(--color-border-subtle);
+}
+
+.hero-section p {
+    font-size: 1.1em;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+.content-section {
+    background-color: var(--color-background-secondary);
+    padding: 40px 20px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.1); /* Brilho sutil nas seções */
+    border: 1px solid var(--color-border-subtle);
+}
+
+/* Estilo para trechos de código ou texto que simula terminal */
+.terminal-text {
+    background-color: var(--color-background-secondary);
+    color: var(--color-accent-green);
+    font-family: 'Fira Code', 'Ubuntu Mono', Consolas, monospace;
+    padding: 15px;
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 5px;
+    white-space: pre-wrap; /* Mantém a formatação e quebra linhas */
+    overflow-x: auto; /* Adiciona scroll se o conteúdo for muito longo */
+    text-shadow: 0 0 3px rgba(0, 255, 0, 0.3); /* Brilho mais forte para texto de terminal */
+}
+
+/* Botões */
+.button {
+    display: inline-block;
+    background-color: var(--color-background-primary);
+    color: var(--color-accent-green);
+    border: 2px solid var(--color-accent-green);
+    padding: 12px 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    margin-top: 20px;
+    cursor: pointer;
+    font-family: 'Fira Code', 'Ubuntu Mono', Consolas, monospace;
+}
+
+.button:hover {
+    background-color: var(--color-accent-green);
+    color: var(--color-background-primary);
+    border-color: var(--color-accent-green); /* Mantém a borda da mesma cor para um efeito sólido */
+    text-decoration: none;
+}
+
+/* Grade de Projetos */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.project-card {
+    background-color: var(--color-background-primary);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid var(--color-border-subtle);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.05);
+    text-align: center;
+}
+
+.project-card h3 {
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+.project-card p {
+    font-size: 0.95em;
+    margin-bottom: 20px;
+}
+
+/* Formulário de Contato */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--color-accent-green);
+    font-family: 'Fira Code', 'Ubuntu Mono', Consolas, monospace;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    background-color: var(--color-background-primary);
+    color: var(--color-accent-green);
+    border: 1px solid var(--color-border-subtle);
+    width: calc(100% - 22px); /* Ajusta para padding e borda */
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Fira Code', 'Ubuntu Mono', Consolas, monospace;
+    font-size: 1em;
+    box-sizing: border-box; /* Garante que padding não aumente a largura total */
+}
+
+/* Placeholder styling */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(0, 255, 0, 0.7);
+    opacity: 1; /* Override default opacity */
+}
+.form-group input::-webkit-input-placeholder,
+.form-group textarea::-webkit-input-placeholder { /* Chrome, Edge, Safari */
+    color: rgba(0, 255, 0, 0.7);
+}
+.form-group input::-moz-placeholder,
+.form-group textarea::-moz-placeholder { /* Firefox 19+ */
+    color: rgba(0, 255, 0, 0.7);
+    opacity: 1;
+}
+.form-group input:-ms-input-placeholder,
+.form-group textarea:-ms-input-placeholder { /* IE 10+ */
+    color: rgba(0, 255, 0, 0.7);
+}
+.form-group input::-ms-input-placeholder,
+.form-group textarea::-ms-input-placeholder { /* Edge */
+    color: rgba(0, 255, 0, 0.7);
+}
+
+
+.contact-form button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1em;
+}
+
+/* Rodapé */
+.site-footer {
+    background-color: var(--color-background-primary);
+    color: var(--color-text-primary);
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid var(--color-border-subtle);
+    font-size: 0.9em;
+}
+
+.site-footer .social-links a {
+    margin: 0 10px;
+    color: var(--color-accent-green);
+    font-weight: bold;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .site-title {
+        font-size: 2em;
+    }
+    .main-nav ul {
+        flex-direction: column;
+    }
+    .main-nav li {
+        margin: 5px 0;
+    }
+    .section-title {
+        font-size: 1.6em;
+    }
+    .hero-section {
+        padding: 40px 15px;
+    }
+    .content-section {
+        padding: 25px 15px;
+    }
+    .project-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+    }
+}
+
+@media (max-width: 480px) {
+    .site-title {
+        font-size: 1.8em;
+    }
+    .main-nav a {
+        font-size: 1em;
+    }
+    .button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+    .contact-form button {
+        font-size: 1em;
+    }
+}
