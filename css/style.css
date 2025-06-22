@@ -1,0 +1,602 @@
+/* Importação de Fontes Google Fonts */
+/* Adicione estas linhas ao <head> do seu HTML para usar as fontes:
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+*/
+
+/* Estilos Gerais */
+body {
+    font-family: 'Roboto', sans-serif; /* Fonte limpa e moderna */
+    margin: 0;
+    padding: 0;
+    background-color: #111111; /* Fundo Preto muito escuro */
+    color: #F0F0F0; /* Cor do texto principal (Branco quase puro) */
+    line-height: 1.7; /* Maior espaçamento entre linhas para melhor leitura */
+    box-sizing: border-box;
+}
+
+/* Garante que o container ocupe 100% da largura em telas pequenas */
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Evita scroll horizontal indesejado */
+}
+
+/* Container para centralizar o conteúdo e limitar a largura */
+.container {
+    max-width: 1200px; /* Largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 0 25px; /* Espaçamento interno nas laterais */
+}
+
+/* Limpa o float */
+.container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* --- Cabeçalho --- */
+header {
+    background-color: #000000; /* Preto sólido para o cabeçalho */
+    color: #F0F0F0; /* Texto branco */
+    padding: 20px 0; /* Mais padding para um visual mais arejado */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4); /* Sombra sutil para profundidade */
+}
+
+header h1 {
+    margin: 0;
+    float: left;
+    font-size: 2.5em; /* Título maior e mais impactante */
+    letter-spacing: 1px;
+    font-family: 'Montserrat', sans-serif; /* Fonte mais profissional para títulos */
+    font-weight: 600; /* Mais encorpado */
+}
+
+header nav {
+    float: right;
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline-block;
+    position: relative;
+    margin-left: 25px; /* Mais espaço entre os itens do menu */
+}
+
+header nav ul li a {
+    display: block;
+    padding: 10px 0px; /* Padding ajustado */
+    color: #F0F0F0; /* Links brancos */
+    text-decoration: none;
+    font-weight: 400; /* Menos negrito para um visual mais clean */
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 2px solid transparent; /* Borda transparente por padrão */
+}
+
+header nav ul li a:hover {
+    color: #007BFF; /* Azul sutil no hover */
+    border-bottom: 2px solid #007BFF; /* Borda inferior azul no hover */
+}
+
+/* --- Submenu (Traduções) --- */
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #1A1A1A; /* Um tom de cinza escuro para o submenu */
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    z-index: 100; /* Z-index alto para garantir que apareça sobre tudo */
+    border-top: 2px solid #007BFF; /* Borda superior azul */
+    border-radius: 0 0 8px 8px; /* Cantos arredondados na parte inferior */
+    padding: 10px 0;
+}
+
+.submenu li {
+    display: block;
+    margin: 0; /* Remove margem entre itens do submenu */
+}
+
+.submenu li a {
+    padding: 12px 20px;
+    color: #F0F0F0; /* Texto branco */
+    font-weight: normal;
+    white-space: nowrap; /* Garante que o texto não quebre */
+    border-bottom: none; /* Remove a borda inferior */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.submenu li a:hover {
+    background-color: #007BFF; /* Fundo azul no hover */
+    color: #FFFFFF; /* Texto branco no hover */
+}
+
+header nav ul li:hover .submenu {
+    display: block;
+}
+
+/* --- Seção Principal (Hero) --- */
+.hero {
+    text-align: center;
+    padding: 100px 25px; /* Mais padding para maior impacto */
+    background-color: #000000; /* Fundo preto sólido */
+    color: #FFFFFF; /* Texto branco */
+    border-bottom: 5px solid #007BFF; /* Borda inferior azul forte */
+}
+
+.hero h2 {
+    font-size: 4em; /* Título maior */
+    margin-bottom: 25px;
+    color: #FFFFFF; /* Texto branco */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* Sombra mais suave */
+}
+
+.hero p {
+    font-size: 1.4em;
+    max-width: 800px;
+    margin: 0 auto 50px auto; /* Centraliza o parágrafo e adiciona margem inferior */
+    color: #D0D0D0; /* Cinza claro para o parágrafo */
+}
+
+/* --- Botão Global --- */
+.button {
+    display: inline-block;
+    background-color: #007BFF; /* Fundo azul profissional */
+    color: #FFFFFF; /* Texto branco */
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 50px; /* Botão mais arredondado (pílula) */
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4); /* Sombra azul sutil */
+    letter-spacing: 0.5px;
+}
+
+.button:hover {
+    background-color: #0056b3; /* Azul mais escuro no hover */
+    transform: translateY(-5px); /* Mais levantamento */
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.6); /* Sombra mais forte */
+}
+
+/* --- Seção de Projetos por Plataforma --- */
+.platform-projects {
+    padding: 80px 0; /* Mais padding */
+}
+
+.platform-projects h2 {
+    color: #007BFF; /* Azul para o título da seção */
+    font-size: 2.8em;
+    text-align: center;
+    margin-bottom: 60px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    border-bottom: 2px solid #333333; /* Linha de separação cinza escura */
+    padding-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Itens um pouco maiores */
+    gap: 40px; /* Mais espaçamento entre os cards */
+    margin-top: 40px;
+}
+
+.project-item {
+    background-color: #1A1A1A; /* Fundo um pouco mais claro que o body para o card */
+    border: 1px solid #333333; /* Borda cinza escura */
+    border-radius: 12px; /* Cantos bem arredondados */
+    overflow: hidden; /* Garante que a imagem respeite os cantos arredondados */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6); /* Sombra mais pronunciada */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-10px); /* Mais levantamento no hover */
+    box-shadow: 0 15px 40px rgba(0, 123, 255, 0.4); /* Sombra azul no hover */
+}
+
+.project-item a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* Revertendo para imagem retangular com object-fit: cover */
+.project-item img {
+    width: 100%;
+    height: 220px; /* Altura fixa para as imagens de capa, retangular */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorção, cortando se necessário */
+    border-bottom: 1px solid #333333; /* Borda cinza */
+}
+
+.project-item h3 {
+    color: #F0F0F0; /* Título do jogo branco */
+    font-size: 1.6em; /* Título maior */
+    margin: 20px 20px 10px 20px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.project-item p {
+    font-size: 1em;
+    color: #B0B0B0; /* Cinza claro para a descrição */
+    padding: 0 20px 25px 20px;
+    text-align: center;
+}
+
+/* --- Páginas de Detalhes do Projeto --- */
+.project-detail {
+    background-color: #1A1A1A; /* Fundo cinza escuro */
+    padding: 50px; /* Mais padding */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7); /* Sombra mais forte */
+    margin-top: 60px;
+    margin-bottom: 60px;
+    border: 2px solid #333333; /* Borda externa cinza */
+}
+
+.project-header {
+    text-align: center;
+    margin-bottom: 50px;
+    border-bottom: 1px dashed #333333; /* Linha tracejada para separar */
+    padding-bottom: 30px;
+}
+
+.project-banner {
+    width: 100%;
+    max-height: 400px; /* Altura máxima para o banner */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border: 3px solid #007BFF; /* Borda azul sólida */
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.5); /* Sombra azul */
+}
+
+.project-detail h1 {
+    color: #007BFF; /* Título principal do projeto em azul */
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+}
+
+.project-detail .release-date {
+    font-style: italic;
+    color: #999999; /* Cinza médio */
+    font-size: 1.2em;
+}
+
+.project-content {
+    font-size: 1.15em;
+    color: #D0D0D0; /* Cor do texto do conteúdo */
+}
+
+.project-content p {
+    margin-bottom: 20px;
+}
+
+.project-content h3 {
+    color: #007BFF; /* Títulos de subseções em azul */
+    border-bottom: 1px solid #333333; /* Linha de separação */
+    padding-bottom: 10px;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    font-size: 2em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.project-content ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.project-content ul li {
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 30px; /* Mais espaço para o ícone */
+}
+
+.project-content ul li::before {
+    content: "•"; /* Ícone de bullet point mais tradicional */
+    color: #007BFF;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.5em; /* Ícone maior */
+    line-height: 1; /* Alinha com o texto */
+}
+
+.download-button {
+    margin-top: 50px;
+    padding: 18px 40px;
+    font-size: 1.3em;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #007BFF; /* Borda no botão */
+    background-color: transparent; /* Fundo transparente por padrão */
+    color: #007BFF; /* Texto azul */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: #007BFF; /* Fundo azul no hover */
+    color: #FFFFFF; /* Texto branco no hover */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.6);
+}
+
+
+.screenshots {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Screenshots maiores */
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.screenshots img {
+    width: 100%;
+    height: 200px; /* Altura maior para screenshots */
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #333333; /* Borda cinza */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.screenshots img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(0, 123, 255, 0.6); /* Brilho azul no hover */
+    border-color: #007BFF; /* Borda azul no hover */
+}
+
+/* --- Rodapé --- */
+footer {
+    background-color: #000000; /* Preto sólido para o rodapé */
+    color: #B0B0B0; /* Cinza claro */
+    text-align: center;
+    padding: 30px 0;
+    border-top: 2px solid #333333; /* Linha de separação cinza */
+    margin-top: 80px; /* Mais margem superior */
+    font-size: 0.95em;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.4); /* Sombra superior */
+}
+
+/* --- Visão Geral das Plataformas (translations.html) --- */
+.platform-overview {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.platform-overview h2 {
+    color: #007BFF; /* Azul para o título da seção */
+    font-size: 2.8em;
+    margin-bottom: 60px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    border-bottom: 2px solid #333333; /* Linha de separação cinza escura */
+    padding-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.platform-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 3 colunas em telas médias, se ajusta */
+    gap: 30px; /* Espaçamento entre os cards */
+    justify-content: center; /* Centraliza os cards se não preencherem toda a linha */
+}
+
+.platform-card {
+    background-color: #1A1A1A; /* Fundo um pouco mais claro que o body */
+    border: 1px solid #333333; /* Borda cinza escura */
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.platform-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 123, 255, 0.4); /* Sombra azul no hover */
+    border-color: #007BFF; /* Borda azul no hover */
+}
+
+.platform-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block; /* Faz o link cobrir todo o card */
+}
+
+.platform-card img {
+    max-width: 100px; /* Tamanho do logo da plataforma */
+    height: auto;
+    margin-bottom: 15px;
+    filter: grayscale(100%) brightness(150%); /* Deixa o logo em P&B e um pouco mais claro */
+    transition: filter 0.3s ease;
+}
+
+.platform-card:hover img {
+    filter: grayscale(0%) brightness(100%); /* Remove o filtro de P&B no hover, revelando a cor original */
+}
+
+.platform-card h3 {
+    color: #F0F0F0; /* Texto branco */
+    font-size: 1.3em;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 992px) {
+    .hero h2 {
+        font-size: 3.5em;
+    }
+    .platform-projects h2 {
+        font-size: 2.2em;
+    }
+    .project-detail h1 {
+        font-size: 2.8em;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        float: none;
+        text-align: center;
+        margin-bottom: 15px;
+        font-size: 2.2em;
+    }
+
+    header nav {
+        float: none;
+        text-align: center;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 0 auto 10px auto; /* Centraliza e adiciona margem vertical */
+    }
+
+    .submenu {
+        position: static;
+        box-shadow: none;
+        border-top: none;
+        width: 100%;
+        border-radius: 0;
+        padding: 5px 0;
+    }
+    .submenu li a {
+        padding: 10px 15px;
+    }
+
+    .hero {
+        padding: 80px 20px;
+    }
+    .hero h2 {
+        font-size: 2.8em;
+    }
+    .hero p {
+        font-size: 1.1em;
+    }
+
+    .platform-projects {
+        padding: 60px 0;
+    }
+    .platform-projects h2 {
+        font-size: 2em;
+        margin-bottom: 40px;
+    }
+
+    .project-detail {
+        padding: 30px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .project-detail h1 {
+        font-size: 2.2em;
+    }
+    .project-detail .release-date {
+        font-size: 1em;
+    }
+    .project-detail h3 {
+        font-size: 1.6em;
+    }
+
+    .download-button {
+        padding: 14px 25px;
+        font-size: 1.1em;
+    }
+
+    .screenshots {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+    .screenshots img {
+        height: 140px;
+    }
+
+    footer {
+        margin-top: 50px;
+        padding: 20px 0;
+    }
+
+    /* Responsividade para a grid de plataformas */
+    .platform-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Ajusta para 2 colunas */
+        gap: 20px;
+    }
+    .platform-overview h2 {
+        font-size: 2.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    header h1 {
+        font-size: 1.8em;
+    }
+    .hero h2 {
+        font-size: 2.2em;
+    }
+    .hero p {
+        font-size: 0.95em;
+    }
+    .platform-projects h2 {
+        font-size: 1.8em;
+    }
+    .project-item img {
+        height: 180px; /* Altura fixa para mobile também */
+    }
+    .project-item h3 {
+        font-size: 1.3em;
+    }
+    .project-item p {
+        font-size: 0.85em;
+    }
+    .project-detail h1 {
+        font-size: 1.8em;
+    }
+    .project-detail h3 {
+        font-size: 1.4em;
+    }
+    .project-content {
+        font-size: 1em;
+    }
+    .screenshots img {
+        height: 100px;
+    }
+
+    /* Responsividade para a grid de plataformas */
+    .platform-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+        gap: 15px;
+    }
+    .platform-card {
+        padding: 20px;
+    }
+    .platform-card img {
+        max-width: 80px;
+    }
+    .platform-card h3 {
+        font-size: 1.1em;
+    }
+    .platform-overview h2 {
+        font-size: 1.8em;
+    }
+}
